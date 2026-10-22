@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-paper text-asphalt antialiased; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+}
+@layer components {
+  .card { @apply bg-white border border-asphalt/10 rounded-xl shadow-sm; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-asphalt disabled:opacity-40 disabled:cursor-not-allowed; }
+  .btn-primary { @apply bg-gradient-to-r from-amber-300 to-amber-500 text-asphalt shadow-sm hover:brightness-95; }
+  .btn-ghost { @apply bg-white border border-asphalt/20 hover:bg-asphalt/5; }
+  .input { @apply w-full border border-asphalt/20 rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-lane; }
+  .badge { @apply inline-block rounded-full px-2 py-0.5 text-xs font-semibold; }
+  .navy-bg { background: linear-gradient(90deg, #0b1f4b, #1a3f94); }
+  .side-bg { background: linear-gradient(180deg, #0e2250, #0a1735); }
+  .lane-line { height: 4px; background-image: repeating-linear-gradient(90deg, #f7b500 0 28px, transparent 28px 48px); }
+}
+
+.focus-pin { width: 26px; height: 26px; border-radius: 9999px; border: 3px solid #f7b500; background: rgba(247,181,0,.25); animation: pin-pulse 1.6s infinite; }
+@keyframes pin-pulse { 0% { box-shadow: 0 0 0 0 rgba(247,181,0,.6); } 70% { box-shadow: 0 0 0 18px rgba(247,181,0,0); } 100% { box-shadow: 0 0 0 0 rgba(247,181,0,0); } }

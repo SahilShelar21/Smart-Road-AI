@@ -1,0 +1,19 @@
+# Web stack: exact versions that work together (an unpinned resolver was backtracking and failing)
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.5.2
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+geoalchemy2==0.15.2
+alembic==1.13.3
+pyjwt==2.9.0
+bcrypt==4.2.0
+python-multipart==0.0.12
+# Vision / AI (OpenCV is forced to version 4 in the Dockerfile)
+ultralytics>=8.3
+opencv-python-headless>=4.10,<5
+numpy>=1.26
+# Tests
+pytest>=8
+httpx>=0.27

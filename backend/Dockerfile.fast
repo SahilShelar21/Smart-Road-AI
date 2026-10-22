@@ -1,0 +1,11 @@
+# TEMPORARY unblock: build on top of the backend image you already built (it contains all Python packages),
+# so no pip dependency resolution is needed. Only new code is copied in.
+FROM smartroad-ai-backend:latest
+USER root
+WORKDIR /app
+RUN pip install --no-cache-dir openpyxl || echo "openpyxl not installed (only the Excel export needs it)"
+COPY . .
+RUN chown -R app /app /data
+USER app
+EXPOSE 8000
+CMD ["sh", "-c", "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"]

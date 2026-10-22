@@ -1,0 +1,6 @@
+# Use together with the main file:  docker compose -f docker-compose.yml -f docker-compose.fast.yml up --build -d backend frontend
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.fast
